@@ -28,6 +28,12 @@ namespace E___Commerce
            
             Response.Redirect("ListCategories.aspx");
         }
+        protected void btnViewCategories_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListCategories.aspx");
+        }
+
+
 
 
     }

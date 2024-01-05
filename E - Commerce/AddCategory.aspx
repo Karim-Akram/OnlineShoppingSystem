@@ -27,6 +27,7 @@
         .btn-primary {
             background-color: #007bff;
             border-color: #007bff;
+            margin-bottom: 10px; 
         }
 
         .btn-primary:hover {
@@ -57,7 +58,6 @@
             <div class="form-group">
                 <asp:Label ID="lblCategoryName" runat="server" Text="Category English Name:" ForeColor="#007bff"></asp:Label>
                 <asp:TextBox ID="txtCategoryName" runat="server" CssClass="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvCategoryName" runat="server" ControlToValidate="txtCategoryName" ErrorMessage="Category English Name is required." ForeColor="#dc3545"></asp:RequiredFieldValidator>
             </div>
 
             <div class="form-group">
@@ -65,7 +65,14 @@
                 <asp:TextBox ID="txtCategoryDescription" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
 
-            <asp:Button ID="btnAddCategory" runat="server" Text="Add Category" OnClick="btnAddCategory_Click" CssClass="btn btn-primary" />
+            <div class="row"> 
+                <div class="col-md-6"> 
+                    <asp:Button ID="btnAddCategory" runat="server" Text="Add Category" OnClick="btnAddCategory_Click" CssClass="btn btn-primary btn-block" />
+                </div>
+                <div class="col-md-6"> 
+                    <a href='<%= ResolveUrl("~/ListCategories.aspx") %>' class="btn btn-primary btn-block">View Categories</a>
+                </div>
+            </div>
         </div>
     </form>
 </body>
