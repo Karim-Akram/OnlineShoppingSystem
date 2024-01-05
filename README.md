@@ -21,7 +21,7 @@ To run this system locally, ensure you have the following installed:
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/your-username/online-shop-system.git`
+1. Clone the repository: `git clone https://github.com/Karim-Akram/OnlineShoppingSystem/tree/master`
 2. Open the solution in your preferred development environment (e.g., Visual Studio).
 3. Build the solution to restore NuGet packages and compile the code.
 4. Configure the connection string in the `appsettings.json` file to point to your database.
@@ -41,4 +41,4 @@ To run this system locally, ensure you have the following installed:
 
 ## Contact
 
-For any inquiries or further information, please contact [Karim Akram Aboelfetouh](karimakramaboelfetouh@gmail.com).
+For any inquiries or further information, please contact (karimakramaboelfetouh@gmail.com).
