@@ -5,7 +5,7 @@ using System.Web;
 
 namespace E___Commerce.Models
 {
-    // Product.cs
+
     public class Product
     {
         public int ProductID { get; set; }
@@ -18,7 +18,7 @@ namespace E___Commerce.Models
         public int CategoryID { get; set; }
         public int SupplierID { get; set; }
 
-        // Navigation properties
+
         public Category Category { get; set; }
         public Supplier Supplier { get; set; }
     }

@@ -16,7 +16,6 @@ namespace E___Commerce.Models
         public string SupplierAddress { get; set; }
 
 
-        // Navigation property
         public ICollection<Product> Products { get; set; }
     }
 
