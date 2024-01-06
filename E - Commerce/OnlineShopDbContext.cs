@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using E___Commerce.Models;
+using E_Commerce.Models;
 
 namespace E___Commerce
 {
@@ -11,7 +12,12 @@ namespace E___Commerce
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Product> Products { get; set; }
 
-        
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
+
+
+
         public void AddCategory(string categoryName, string categoryDescription)
         {
             try
@@ -71,6 +77,26 @@ namespace E___Commerce
             }
         }
 
+        public void SaveOrderToDatabase(Order newOrder)
+        {
+            try
+            {
+                Orders.Add(newOrder);
+                SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                // Handle exceptions
+                var innerException = ex.InnerException;
+                while (innerException != null)
+                {
+                    Console.WriteLine($"Inner Exception: {innerException.Message}");
+                    innerException = innerException.InnerException;
+                }
+
+                throw;
+            }
+        }
 
     }
 }

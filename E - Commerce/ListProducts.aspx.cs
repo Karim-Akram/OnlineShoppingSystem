@@ -116,7 +116,6 @@ namespace E___Commerce
             }
         }
 
-
         private void ShowErrorMessage(Label errorLabel, string message)
         {
             if (errorLabel != null)
@@ -125,10 +124,10 @@ namespace E___Commerce
             }
             else
             {
-                
-                Console.WriteLine("Error: errorLabel is null. Message: " + message);
+                Console.WriteLine("Warning: errorLabel is null. Message: " + message);
             }
         }
+
 
 
         private bool IsAllowedFileExtension(string fileExtension)
@@ -154,7 +153,6 @@ namespace E___Commerce
             BindProducts();
         }
 
-        
         private string SaveProductImage(FileUpload fileUpload)
         {
             string uploadFolder = Server.MapPath("~/ProductImages");
@@ -163,7 +161,6 @@ namespace E___Commerce
 
             fileUpload.SaveAs(filePath);
 
-            
             return "~/ProductImages/" + fileName;
         }
     }
