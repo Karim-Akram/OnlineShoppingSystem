@@ -41,6 +41,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+         <h1 class="text-center">List of Categories</h1>
         <asp:GridView ID="GridViewCategories" runat="server" AutoGenerateColumns="False" AllowPaging="True"
             PageSize="5" CssClass="table table-striped table-bordered" OnPageIndexChanging="GridViewCategories_PageIndexChanging"
             OnRowEditing="GridViewCategories_RowEditing" OnRowCancelingEdit="GridViewCategories_RowCancelingEdit"

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data;
-using System.Data.SqlClient;
-using System.Data.Sql;
 using System.Data.Entity;
-using E___Commerce.Models;
 using System.Data.Entity.Infrastructure;
+using E___Commerce.Models;
 
 namespace E___Commerce
 {
@@ -17,6 +11,7 @@ namespace E___Commerce
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Product> Products { get; set; }
 
+        
         public void AddCategory(string categoryName, string categoryDescription)
         {
             try
@@ -25,21 +20,17 @@ namespace E___Commerce
                 {
                     CategoryName = categoryName,
                     CategoryDescription = categoryDescription
-                    
                 };
 
-               
                 Categories.Add(newCategory);
-
                 SaveChanges();
             }
             catch (DbUpdateException ex)
             {
-                
+                // Handle exceptions
                 var innerException = ex.InnerException;
                 while (innerException != null)
                 {
-                 
                     Console.WriteLine($"Inner Exception: {innerException.Message}");
                     innerException = innerException.InnerException;
                 }
@@ -47,8 +38,39 @@ namespace E___Commerce
                 throw;
             }
         }
+
+       
+        public void AddProduct(string productName, string productArabicName, string productDescription, decimal productPrice, int categoryId, string productImage)
+        {
+            try
+            {
+                var newProduct = new Product
+                {
+                    ProductArabicName = productArabicName,
+                    ProductName = productName,
+                    ProductDescription = productDescription,
+                    ProductPrice = productPrice,
+                    CategoryID = categoryId,
+                    ProductImage = productImage 
+                };
+
+                Products.Add(newProduct);
+                SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                // Handle exceptions
+                var innerException = ex.InnerException;
+                while (innerException != null)
+                {
+                    Console.WriteLine($"Inner Exception: {innerException.Message}");
+                    innerException = innerException.InnerException;
+                }
+
+                throw;
+            }
+        }
+
+
     }
-
-
-
 }

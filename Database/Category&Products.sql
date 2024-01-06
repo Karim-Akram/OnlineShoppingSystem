@@ -14,6 +14,8 @@ CREATE TABLE Products (
     ProductID INT PRIMARY KEY IDENTITY(1,1),
     ProductName NVARCHAR(255) NOT NULL,
     ProductDescription NVARCHAR(MAX),
+	ProductArabicName NVARCHAR(255),
+	ProductImage NVARCHAR(MAX),
     ProductPrice DECIMAL(18, 2) NOT NULL,
     CategoryID INT FOREIGN KEY REFERENCES Categories(CategoryID),
     SupplierID INT FOREIGN KEY REFERENCES Suppliers(SupplierID)

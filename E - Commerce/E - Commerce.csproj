@@ -145,6 +145,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddCategory.aspx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -167,6 +168,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ListCategories.aspx" />
+    <Content Include="ListProducts.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -237,6 +239,13 @@
     <Compile Include="AddCategory.aspx.designer.cs">
       <DependentUpon>AddCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -270,6 +279,13 @@
     </Compile>
     <Compile Include="ListCategories.aspx.designer.cs">
       <DependentUpon>ListCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProducts.aspx.cs">
+      <DependentUpon>ListProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProducts.aspx.designer.cs">
+      <DependentUpon>ListProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202401041655473_InitialCreate.cs" />
     <Compile Include="Migrations\202401041655473_InitialCreate.designer.cs">

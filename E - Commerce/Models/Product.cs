@@ -1,27 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using E___Commerce.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace E___Commerce.Models
+public class Product
 {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int ProductID { get; set; }
 
-    public class Product
-    {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public string ProductDescription { get; set; }
-        public decimal ProductPrice { get; set; }
+    [Required]
+    public string ProductName { get; set; }
+    [Required]
+    public string ProductArabicName { get; set; }
 
+    public string ProductDescription { get; set; }
 
-        // Foreign keys
-        public int CategoryID { get; set; }
-        public int SupplierID { get; set; }
+    [Required]
+    public decimal ProductPrice { get; set; }
 
+    public string ProductImage { get; set; }
 
-        public Category Category { get; set; }
-        public Supplier Supplier { get; set; }
-    }
+    // Foreign keys
+    public int? CategoryID { get; set; }
 
+    // Allow NULL for SupplierID
+    public int? SupplierID { get; set; }
 
+    public Category Category { get; set; }
+    public Supplier Supplier { get; set; }
 }
