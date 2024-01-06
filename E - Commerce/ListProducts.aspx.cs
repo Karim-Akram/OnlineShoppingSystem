@@ -54,12 +54,19 @@ namespace E___Commerce
                 int productId = Convert.ToInt32(GridViewProducts.DataKeys[e.RowIndex].Value);
                 string updatedProductName = (GridViewProducts.Rows[e.RowIndex].FindControl("txtEditProductName") as TextBox)?.Text;
                 string updatedProductArabicName = (GridViewProducts.Rows[e.RowIndex].FindControl("txtEditProductArabicName") as TextBox)?.Text;
-                string updatedProductDescription = (GridViewProducts.Rows[e.RowIndex].Cells[3].Controls[0] as TextBox)?.Text;
+                string updatedProductDescription = (GridViewProducts.Rows[e.RowIndex].FindControl("txtEditProductDescription") as TextBox)?.Text;
                 decimal updatedProductPrice = 0;
 
                 TextBox txtEditProductPrice = GridViewProducts.Rows[e.RowIndex].FindControl("txtEditProductPrice") as TextBox;
                 FileUpload fileEditProductImage = GridViewProducts.Rows[e.RowIndex].FindControl("fileEditProductImage") as FileUpload;
+
+                // Find the ErrorMessageLabel within the correct container (Row)
                 Label lblErrorMessage = GridViewProducts.Rows[e.RowIndex].FindControl("ErrorMessageLabel") as Label;
+
+                if (lblErrorMessage != null)
+                {
+                    ShowErrorMessage(lblErrorMessage, "Please enter a valid Product Price.");
+                }
 
                 // Validate Product Price
                 if (!decimal.TryParse(txtEditProductPrice.Text, out updatedProductPrice))
@@ -109,11 +116,20 @@ namespace E___Commerce
             }
         }
 
+
         private void ShowErrorMessage(Label errorLabel, string message)
         {
-           
-            errorLabel.Text = message;
+            if (errorLabel != null)
+            {
+                errorLabel.Text = message;
+            }
+            else
+            {
+                
+                Console.WriteLine("Error: errorLabel is null. Message: " + message);
+            }
         }
+
 
         private bool IsAllowedFileExtension(string fileExtension)
         {
